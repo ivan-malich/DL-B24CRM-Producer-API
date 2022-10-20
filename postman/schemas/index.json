@@ -1,0 +1,196 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "DL-B24CRM-Producer-API",
+        "description": "Produce data from B24 CRM"
+    },
+    "servers": [
+        {
+            "url": "https://swt-it-api.sanwell.biz/{basePath}",
+            "description": "Test environment (external access)",
+            "variables": {
+                "basePath": {
+                    "default": "b24crm"
+                }
+            }
+        },
+        {
+            "url": "https://swt-it-api.sw.test/{basePath}",
+            "description": "Test environment (internal access)",
+            "variables": {
+                "basePath": {
+                    "default": "b24crm"
+                }
+            }
+        },
+        {
+            "url": "https://it-api.sanwell.biz/{basePath}",
+            "description": "Production environment",
+            "variables": {
+                "basePath": {
+                    "default": "b24crm"
+                }
+            }
+        }
+    ],
+    "paths": {
+        "/entities/contacts": {
+            "post": {
+                "summary": "Posts 'New contact created' event",
+                "description": "Creates and posts to Kafka an even of type 'New contact created'",
+                "requestBody": {
+                    "description": "Contact object been created",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/contact"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The contact creation event has been successfully posted to Kafka",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Input parameters mismatch",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server error occured",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Posts 'Contact updated' event",
+                "description": "Creates and posts to Kafka an even of type 'Contact updated'",
+                "requestBody": {
+                    "description": "Contact object been updated",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/contact"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The contact updation event has been successfully posted to Kafka",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Input parameters mismatch",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server error occured",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "SpacecraftId": {
+                "description": "The unique identifier of a spacecraft",
+                "type": "string"
+            },
+            "Spacecraft": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "type"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/SpacecraftId"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "capsule",
+                            "probe",
+                            "satellite",
+                            "spaceplane",
+                            "station"
+                        ]
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "required": [
+                    "message"
+                ],
+                "properties": {
+                    "message": {
+                        "description": "A human readable error message",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "ApiKey": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "X-Api-Key"
+            }
+        }
+    },
+    "security": [
+        {
+            "ApiKey": []
+        }
+    ]
+}
