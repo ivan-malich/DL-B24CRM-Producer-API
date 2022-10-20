@@ -45,7 +45,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/contact"
+                                "$ref": "#/components/schemas/Contact"
                             }
                         }
                     }
@@ -92,7 +92,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/contact"
+                                "$ref": "#/components/schemas/Contact"
                             }
                         }
                     }
@@ -134,48 +134,144 @@
     },
     "components": {
         "schemas": {
-            "SpacecraftId": {
-                "description": "The unique identifier of a spacecraft",
-                "type": "string"
-            },
-            "Spacecraft": {
+            "Phone": {
                 "type": "object",
                 "required": [
-                    "id",
-                    "name",
-                    "type"
+                    "type",
+                    "number"
                 ],
                 "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/SpacecraftId"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
                     "type": {
-                        "type": "string",
-                        "enum": [
-                            "capsule",
-                            "probe",
-                            "satellite",
-                            "spaceplane",
-                            "station"
-                        ]
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 9,
+                        "default": 1
                     },
-                    "description": {
-                        "type": "string"
+                    "number": {
+                        "type":  "string",
+                        "pattern": "^(38)?(0\\d{9}$)"
                     }
                 }
             },
-            "Error": {
+            "Email": {
                 "type": "object",
                 "required": [
-                    "message"
+                    "type",
+                    "email"
                 ],
                 "properties": {
-                    "message": {
-                        "description": "A human readable error message",
-                        "type": "string"
+                    "type": {
+                        "type": "integer",
+                        "minimum": 100,
+                        "maximum": 105,
+                        "default": 100
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+                    }
+                }
+            },
+            "Contact": {
+                "type": "object",
+                "anyOf": [
+                    {
+                        "required": [
+                            "id",
+                            "firstName",
+                            "lastName",
+                            "phones"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "id",
+                            "firstName",
+                            "lastName",
+                            "emails"
+                        ]
+                    }
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 50
+                    },
+                    "middleName": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 50,
+                        "nullable": true
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 50
+                    },
+                    "phones": {
+                        "type": "array",
+                        "items": {
+                            "type": "#/components/schemas/Phone"
+                        },
+                        "minItems": 1,
+                        "nullable": true
+                    },
+                    "emails": {
+                        "type": "array",
+                        "items": {
+                            "type": "#/components/schemas/Email"
+                        },
+                        "minItems": 1,
+                        "nullable": true
+                    },
+                    "comment": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 1024,
+                        "nullable": true
+                    },
+                    "gender": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "viber": {
+                        "type": "string",
+                        "pattern": "^(38)?(0\\d{9}$)",
+                        "nullable": true
+                    },
+                    "whatsapp": {
+                        "type": "string",
+                        "pattern": "^(38)?(0\\d{9}$)",
+                        "nullable": true
+                    },
+                    "telegram": {
+                        "type": "string",
+                        "nullable": true,
+                        "minLength": 2,
+                        "maxLength": 50
+                    },
+                    "skype": {
+                        "type": "string",
+                        "nullable": true,
+                        "minLength": 2,
+                        "maxLength": 50
+                    },
+                    "birthday": {
+                        "type": "string",
+                        "pattern": "^(19|20)\\d{2}-(0[1-9]|1[012])-(0[1-9]|[12]\\d|3[01])$",
+                        "nullable": true
+                    },
+                    "prefLang": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 20,
+                        "default": 1
                     }
                 }
             }
