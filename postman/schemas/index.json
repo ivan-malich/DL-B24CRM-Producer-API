@@ -181,16 +181,15 @@
             }
         },
         "securitySchemes": {
-            "ApiKey": {
-                "type": "apiKey",
-                "in": "header",
-                "name": "X-Api-Key"
+            "basicAuth": {
+                "type": "http",
+                "scheme": "basic"
             }
         }
     },
     "security": [
         {
-            "ApiKey": []
+            "basicAuth": []
         }
     ]
 }
