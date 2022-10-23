@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "ab95c8da-63f8-4931-bcb9-2c8d895c6d84",
+		"name": "DL-B24CRM-Producer",
+		"description": "Produce data from B24 CRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "4009237-ab95c8da-63f8-4931-bcb9-2c8d895c6d84"
+	},
+	"item": [
+		{
+			"name": "entities/contacts",
+			"item": [
+				{
+					"name": "Posts 'New contact created' event",
+					"id": "16510302-e2eb-4f60-b82c-27eec28215ff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/entities/contacts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entities",
+								"contacts"
+							],
+							"variable": [
+								{
+									"key": "basePath",
+									"value": "{{basePath}}"
+								}
+							]
+						},
+						"description": "Creates and posts to Kafka an even of type 'New contact created'"
+					},
+					"response": [
+						{
+							"id": "bd60ae18-db0a-4ed5-8625-bcb44020bbe2",
+							"name": "The contact creation event has been successfully posted to Kafka",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/contacts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"contacts"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"timestamp\": \"1950-03-31T18:05:25.529Z\",\n  \"status\": -91884417,\n  \"path\": \"officia\",\n  \"success\": true,\n  \"errorCode\": 75647208,\n  \"errorDescription\": \"est consectetur ipsum Ut in\",\n  \"extendedInfo\": \"aliqua reprehenderit magna qui\"\n}"
+						},
+						{
+							"id": "ea80e306-2f31-48ee-a715-8b88986672f7",
+							"name": "Input parameters mismatch",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/contacts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"contacts"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"timestamp\": \"1950-03-31T18:05:25.529Z\",\n  \"status\": -91884417,\n  \"path\": \"officia\",\n  \"success\": true,\n  \"errorCode\": 75647208,\n  \"errorDescription\": \"est consectetur ipsum Ut in\",\n  \"extendedInfo\": \"aliqua reprehenderit magna qui\"\n}"
+						},
+						{
+							"id": "cf257f9b-9c22-4f03-8f24-d3ebc34db85c",
+							"name": "Server error occured",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/contacts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"contacts"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"timestamp\": \"1950-03-31T18:05:25.529Z\",\n  \"status\": -91884417,\n  \"path\": \"officia\",\n  \"success\": true,\n  \"errorCode\": 75647208,\n  \"errorDescription\": \"est consectetur ipsum Ut in\",\n  \"extendedInfo\": \"aliqua reprehenderit magna qui\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Posts 'Contact updated' event",
+					"id": "3f63cce7-98c2-41fa-8a16-d9668dbdbe3b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/entities/contacts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entities",
+								"contacts"
+							],
+							"variable": [
+								{
+									"key": "basePath",
+									"value": "{{basePath}}"
+								}
+							]
+						},
+						"description": "Creates and posts to Kafka an even of type 'Contact updated'"
+					},
+					"response": [
+						{
+							"id": "454566a9-bdd9-4020-87a1-8bcf52f18a34",
+							"name": "The contact updation event has been successfully posted to Kafka",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/contacts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"contacts"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"timestamp\": \"1950-03-31T18:05:25.529Z\",\n  \"status\": -91884417,\n  \"path\": \"officia\",\n  \"success\": true,\n  \"errorCode\": 75647208,\n  \"errorDescription\": \"est consectetur ipsum Ut in\",\n  \"extendedInfo\": \"aliqua reprehenderit magna qui\"\n}"
+						},
+						{
+							"id": "7de8e75c-20e5-4682-a5f6-4e7eb155dff3",
+							"name": "Input parameters mismatch",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/contacts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"contacts"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"timestamp\": \"1950-03-31T18:05:25.529Z\",\n  \"status\": -91884417,\n  \"path\": \"officia\",\n  \"success\": true,\n  \"errorCode\": 75647208,\n  \"errorDescription\": \"est consectetur ipsum Ut in\",\n  \"extendedInfo\": \"aliqua reprehenderit magna qui\"\n}"
+						},
+						{
+							"id": "dc538c47-070c-496a-856b-f91432c7b6cb",
+							"name": "Server error occured",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/contacts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"contacts"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"timestamp\": \"1950-03-31T18:05:25.529Z\",\n  \"status\": -91884417,\n  \"path\": \"officia\",\n  \"success\": true,\n  \"errorCode\": 75647208,\n  \"errorDescription\": \"est consectetur ipsum Ut in\",\n  \"extendedInfo\": \"aliqua reprehenderit magna qui\"\n}"
+						}
+					]
+				}
+			],
+			"id": "a52a8dc9-feba-4f2b-8a6f-28680dd6f8d1"
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "<Basic Auth Username>",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "<Basic Auth Password>",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "8aa95c60-4330-4b98-b7ce-5e76c5ffce4c",
+			"key": "basePath",
+			"value": "b24crm",
+			"type": "any",
+			"description": {
+				"content": "",
+				"type": "text/plain"
+			}
+		},
+		{
+			"id": "34035ccb-8614-4cce-b8b7-d01f8b4f12b2",
+			"key": "baseUrl",
+			"value": "https://swt-it-api.sanwell.biz/{{basePath}}",
+			"type": "string"
+		}
+	]
+}
