@@ -134,6 +134,39 @@
     },
     "components": {
         "schemas": {
+            "ClientAssociation": {
+                "type": "object",
+                "oneOf": [
+                    {
+                        "required": [
+                            "clientAssociationType",
+                            "counterparty"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "clientAssociationType",
+                            "tradeOutlet"
+                        ]
+                    }
+                ],
+                "properties": {
+                    "clientAssociationType": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 20,
+                        "default": 7
+                    },
+                    "counterparty": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "tradeOutlet": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                }
+            },
             "Phone": {
                 "type": "object",
                 "required": [
@@ -175,7 +208,7 @@
             },
             "Contact": {
                 "type": "object",
-                "anyOf": [
+                "oneOf": [
                     {
                         "required": [
                             "id",
@@ -272,6 +305,41 @@
                         "minimum": 1,
                         "maximum": 20,
                         "default": 1
+                    },
+                    "clientAssociations": {
+                        "type": "array",
+                        "items": {
+                            "type": "#/components/schemas/ClientAssociation"
+                        },
+                        "minItems": 1,
+                        "nullable": true
+                    }
+                }
+            },
+            "b24crm-producer-response": {
+                "type": "object",
+                "properties": {
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "status": {
+                        "type": "integer"
+                    },
+                    "path": {
+                        "type": "string"
+                    },
+                    "success": {
+                        "type": "boolean"
+                    },
+                    "errorCode": {
+                        "type": "integer"
+                    },
+                    "errorDescription": {
+                        "type": "string"
+                    },
+                    "extendedInfo": {
+                        "type": "string"
                     }
                 }
             }
