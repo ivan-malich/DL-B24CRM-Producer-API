@@ -5,7 +5,6 @@ id = ba4c68bd-9d46-4b76-a39e-2cfdfadd8dcc
 
 [relations.collections]
 rootDirectory = postman/collections
-files[] = {"id":"4009237-ab95c8da-63f8-4931-bcb9-2c8d895c6d84","path":"DL-B24CRM-Producer.json","metaData":{}}
 
 [relations.collections.metaData]
 

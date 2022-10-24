@@ -3,7 +3,16 @@
     "info": {
         "version": "1.0.0",
         "title": "DL-B24CRM-Producer-API",
-        "description": "Produce data from B24 CRM"
+        "description": "Produce data from B24 CRM",
+        "license": {
+            "identifier": "MIT",
+            "name": "MIT License"
+        },
+        "contact": {
+            "name": "Ivan A. Malych",
+            "email": "iam@sanwell.biz",
+            "url": "www.linkedin.com/in/ivan-malych"
+        }
     },
     "servers": [
         {
@@ -45,7 +54,14 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Contact"
+                                "oneOf": [
+                                    {
+                                        "$ref": "#/components/schemas/ContactWithPhones"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/ContactWithEmails"
+                                    }
+                                ]
                             }
                         }
                     }
@@ -92,7 +108,14 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Contact"
+                                "oneOf": [
+                                    {
+                                        "$ref": "#/components/schemas/ContactWithPhones"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/ContactWithEmails"
+                                    }
+                                ]
                             }
                         }
                     }
@@ -130,25 +153,207 @@
                     }
                 }
             }
+        },
+        "/entities/counterparties": {
+            "post": {
+                "summary": "Posts 'New counterparty created' event",
+                "description": "Creates and posts to Kafka an even of type 'New counterparty created'",
+                "requestBody": {
+                    "description": "Counterparty object been created",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Counterparty"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The counterparty creation event has been successfully posted to Kafka",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Input parameters mismatch",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server error occured",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Posts 'Counterparty updated' event",
+                "description": "Creates and posts to Kafka an even of type 'Counterparty updated'",
+                "requestBody": {
+                    "description": "Counterparty object been updated",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Counterparty"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The counterparty updation event has been successfully posted to Kafka",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Input parameters mismatch",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server error occured",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/entities/tradeoutlets": {
+            "post": {
+                "summary": "Posts 'New trade outlet created' event",
+                "description": "Creates and posts to Kafka an even of type 'New trade outlet created'",
+                "requestBody": {
+                    "description": "TradeOutlet object been created",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TradeOutlet"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The trade outlet creation event has been successfully posted to Kafka",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Input parameters mismatch",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server error occured",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Posts 'Trade outlet updated' event",
+                "description": "Creates and posts to Kafka an even of type 'Trade outlet updated'",
+                "requestBody": {
+                    "description": "TradeOutlet object been updated",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TradeOutlet"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The trade outlet updation event has been successfully posted to Kafka",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Input parameters mismatch",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server error occured",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/b24crm-producer-response"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
         "schemas": {
-            "ClientAssociation": {
+            "ClientAssociationCP": {
                 "type": "object",
-                "oneOf": [
-                    {
-                        "required": [
-                            "clientAssociationType",
-                            "counterparty"
-                        ]
-                    },
-                    {
-                        "required": [
-                            "clientAssociationType",
-                            "tradeOutlet"
-                        ]
-                    }
+                "required": [
+                    "clientAssociationType",
+                    "counterparty"
                 ],
                 "properties": {
                     "clientAssociationType": {
@@ -159,13 +364,26 @@
                     },
                     "counterparty": {
                         "type": "string",
-                        "format": "uuid",
-                        "nullable": true
+                        "format": "uuid"
+                    }
+                }
+            },
+            "ClientAssociationTO": {
+                "type": "object",
+                "required": [
+                    "clientAssociationType",
+                    "tradeOutlet"
+                ],
+                "properties": {
+                    "clientAssociationType": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 20,
+                        "default": 7
                     },
                     "tradeOutlet": {
                         "type": "string",
-                        "format": "uuid",
-                        "nullable": true
+                        "format": "uuid"
                     }
                 }
             },
@@ -183,7 +401,7 @@
                         "default": 1
                     },
                     "number": {
-                        "type":  "string",
+                        "type": "string",
                         "pattern": "^(38)?(0\\d{9}$)"
                     }
                 }
@@ -208,25 +426,13 @@
                     }
                 }
             },
-            "Contact": {
+            "ContactWithPhones": {
                 "type": "object",
-                "oneOf": [
-                    {
-                        "required": [
-                            "id",
-                            "firstName",
-                            "lastName",
-                            "phones"
-                        ]
-                    },
-                    {
-                        "required": [
-                            "id",
-                            "firstName",
-                            "lastName",
-                            "emails"
-                        ]
-                    }
+                "required": [
+                    "id",
+                    "firstName",
+                    "lastName",
+                    "phones"
                 ],
                 "properties": {
                     "id": {
@@ -252,15 +458,14 @@
                     "phones": {
                         "type": "array",
                         "items": {
-                            "type": "#/components/schemas/Phone"
+                            "$ref": "#/components/schemas/Phone"
                         },
-                        "minItems": 1,
-                        "nullable": true
+                        "minItems": 1
                     },
                     "emails": {
                         "type": "array",
                         "items": {
-                            "type": "#/components/schemas/Email"
+                            "$ref": "#/components/schemas/Email"
                         },
                         "minItems": 1,
                         "nullable": true
@@ -311,7 +516,122 @@
                     "clientAssociations": {
                         "type": "array",
                         "items": {
-                            "type": "#/components/schemas/ClientAssociation"
+                            "anyOf": [
+                                {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/ClientAssociationCP"
+                                },
+                                {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/ClientAssociationTO"
+                                }
+                            ]
+                        },
+                        "minItems": 1,
+                        "nullable": true
+                    }
+                }
+            },
+            "ContactWithEmails": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "firstName",
+                    "lastName",
+                    "emails"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 50
+                    },
+                    "middleName": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 50,
+                        "nullable": true
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 50
+                    },
+                    "phones": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Phone"
+                        },
+                        "minItems": 1,
+                        "nullable": true
+                    },
+                    "emails": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Email"
+                        },
+                        "minItems": 1
+                    },
+                    "comment": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 1024,
+                        "nullable": true
+                    },
+                    "gender": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "viber": {
+                        "type": "string",
+                        "pattern": "^(38)?(0\\d{9}$)",
+                        "nullable": true
+                    },
+                    "whatsapp": {
+                        "type": "string",
+                        "pattern": "^(38)?(0\\d{9}$)",
+                        "nullable": true
+                    },
+                    "telegram": {
+                        "type": "string",
+                        "nullable": true,
+                        "minLength": 2,
+                        "maxLength": 50
+                    },
+                    "skype": {
+                        "type": "string",
+                        "nullable": true,
+                        "minLength": 2,
+                        "maxLength": 50
+                    },
+                    "birthday": {
+                        "type": "string",
+                        "pattern": "^(19|20)\\d{2}-(0[1-9]|1[012])-(0[1-9]|[12]\\d|3[01])$",
+                        "nullable": true
+                    },
+                    "prefLang": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 20,
+                        "default": 1
+                    },
+                    "clientAssociations": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/ClientAssociationCP"
+                                },
+                                {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/ClientAssociationTO"
+                                }
+                            ]
                         },
                         "minItems": 1,
                         "nullable": true
