@@ -1,0 +1,1256 @@
+{
+	"info": {
+		"_postman_id": "92c76544-f6a0-421b-8bc1-3d02d952bb47",
+		"name": "test1",
+		"description": "Produce data from B24 CRM\n\nContact Support:\n Name: Ivan A. Malych\n Email: iam@sanwell.biz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "4009237-92c76544-f6a0-421b-8bc1-3d02d952bb47"
+	},
+	"item": [
+		{
+			"name": "entities",
+			"item": [
+				{
+					"name": "contacts",
+					"item": [
+						{
+							"name": "Posts 'New contact created' event",
+							"id": "377a970d-8534-4aca-9d05-605150ba672b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"urn:uuid:701b5ebf-0cf9-8f0a-4a95-ed767f21ce47\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"ut veniam est quis fugiat\",\n  \"phones\": [\n    {\n      \"type\": 1,\n      \"number\": \"0451297501\"\n    }\n  ],\n  \"middleName\": \"id a\",\n  \"emails\": [\n    {\n      \"type\": 100,\n      \"email\": \"RwR.W4WQqD@JhE434D8XIc.LxmJVOeN.ZzehPk-lI.L6\"\n    }\n  ],\n  \"comment\": \"adipisicing ut Duis dolor\",\n  \"gender\": false,\n  \"viber\": \"0362667738\",\n  \"whatsapp\": \"0874821948\",\n  \"telegram\": \"occaecat laboris\",\n  \"skype\": \"magna\",\n  \"birthday\": \"1905-10-02\",\n  \"prefLang\": 1,\n  \"clientAssociations\": [\n    {\n      \"clientAssociationType\": 7,\n      \"counterparty\": \"urn:uuid:8e6d6811-055e-3579-e446-4d60d68c72e7\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/contacts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"contacts"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								},
+								"description": "Creates and posts to Kafka an even of type 'New contact created'"
+							},
+							"response": [
+								{
+									"id": "8f2f0eba-f998-40e6-8847-2820884361a3",
+									"name": "The contact creation event has been successfully posted to Kafka",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"urn:uuid:701b5ebf-0cf9-8f0a-4a95-ed767f21ce47\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"ut veniam est quis fugiat\",\n  \"phones\": [\n    {\n      \"type\": 1,\n      \"number\": \"0451297501\"\n    }\n  ],\n  \"middleName\": \"id a\",\n  \"emails\": [\n    {\n      \"type\": 100,\n      \"email\": \"RwR.W4WQqD@JhE434D8XIc.LxmJVOeN.ZzehPk-lI.L6\"\n    }\n  ],\n  \"comment\": \"adipisicing ut Duis dolor\",\n  \"gender\": false,\n  \"viber\": \"0362667738\",\n  \"whatsapp\": \"0874821948\",\n  \"telegram\": \"occaecat laboris\",\n  \"skype\": \"magna\",\n  \"birthday\": \"1905-10-02\",\n  \"prefLang\": 1,\n  \"clientAssociations\": [\n    {\n      \"clientAssociationType\": 7,\n      \"counterparty\": \"urn:uuid:8e6d6811-055e-3579-e446-4d60d68c72e7\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/contacts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"contacts"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "4c6fbaf1-d8e3-483d-9be7-6b40f6f7f766",
+									"name": "Input parameters mismatch",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"urn:uuid:701b5ebf-0cf9-8f0a-4a95-ed767f21ce47\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"ut veniam est quis fugiat\",\n  \"phones\": [\n    {\n      \"type\": 1,\n      \"number\": \"0451297501\"\n    }\n  ],\n  \"middleName\": \"id a\",\n  \"emails\": [\n    {\n      \"type\": 100,\n      \"email\": \"RwR.W4WQqD@JhE434D8XIc.LxmJVOeN.ZzehPk-lI.L6\"\n    }\n  ],\n  \"comment\": \"adipisicing ut Duis dolor\",\n  \"gender\": false,\n  \"viber\": \"0362667738\",\n  \"whatsapp\": \"0874821948\",\n  \"telegram\": \"occaecat laboris\",\n  \"skype\": \"magna\",\n  \"birthday\": \"1905-10-02\",\n  \"prefLang\": 1,\n  \"clientAssociations\": [\n    {\n      \"clientAssociationType\": 7,\n      \"counterparty\": \"urn:uuid:8e6d6811-055e-3579-e446-4d60d68c72e7\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/contacts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"contacts"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "85fa3b4a-6e2a-4143-ac03-f08c257e2d6a",
+									"name": "Server error occured",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"urn:uuid:701b5ebf-0cf9-8f0a-4a95-ed767f21ce47\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"ut veniam est quis fugiat\",\n  \"phones\": [\n    {\n      \"type\": 1,\n      \"number\": \"0451297501\"\n    }\n  ],\n  \"middleName\": \"id a\",\n  \"emails\": [\n    {\n      \"type\": 100,\n      \"email\": \"RwR.W4WQqD@JhE434D8XIc.LxmJVOeN.ZzehPk-lI.L6\"\n    }\n  ],\n  \"comment\": \"adipisicing ut Duis dolor\",\n  \"gender\": false,\n  \"viber\": \"0362667738\",\n  \"whatsapp\": \"0874821948\",\n  \"telegram\": \"occaecat laboris\",\n  \"skype\": \"magna\",\n  \"birthday\": \"1905-10-02\",\n  \"prefLang\": 1,\n  \"clientAssociations\": [\n    {\n      \"clientAssociationType\": 7,\n      \"counterparty\": \"urn:uuid:8e6d6811-055e-3579-e446-4d60d68c72e7\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/contacts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"contacts"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Posts 'Contact updated' event",
+							"id": "beffce50-0b8c-42cd-85e8-2751ac2fabab",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"urn:uuid:701b5ebf-0cf9-8f0a-4a95-ed767f21ce47\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"ut veniam est quis fugiat\",\n  \"phones\": [\n    {\n      \"type\": 1,\n      \"number\": \"0451297501\"\n    }\n  ],\n  \"middleName\": \"id a\",\n  \"emails\": [\n    {\n      \"type\": 100,\n      \"email\": \"RwR.W4WQqD@JhE434D8XIc.LxmJVOeN.ZzehPk-lI.L6\"\n    }\n  ],\n  \"comment\": \"adipisicing ut Duis dolor\",\n  \"gender\": false,\n  \"viber\": \"0362667738\",\n  \"whatsapp\": \"0874821948\",\n  \"telegram\": \"occaecat laboris\",\n  \"skype\": \"magna\",\n  \"birthday\": \"1905-10-02\",\n  \"prefLang\": 1,\n  \"clientAssociations\": [\n    {\n      \"clientAssociationType\": 7,\n      \"counterparty\": \"urn:uuid:8e6d6811-055e-3579-e446-4d60d68c72e7\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/contacts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"contacts"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								},
+								"description": "Creates and posts to Kafka an even of type 'Contact updated'"
+							},
+							"response": [
+								{
+									"id": "be3877bf-c3a0-4011-89c8-f62d0a23ce4e",
+									"name": "The contact updation event has been successfully posted to Kafka",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"urn:uuid:701b5ebf-0cf9-8f0a-4a95-ed767f21ce47\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"ut veniam est quis fugiat\",\n  \"phones\": [\n    {\n      \"type\": 1,\n      \"number\": \"0451297501\"\n    }\n  ],\n  \"middleName\": \"id a\",\n  \"emails\": [\n    {\n      \"type\": 100,\n      \"email\": \"RwR.W4WQqD@JhE434D8XIc.LxmJVOeN.ZzehPk-lI.L6\"\n    }\n  ],\n  \"comment\": \"adipisicing ut Duis dolor\",\n  \"gender\": false,\n  \"viber\": \"0362667738\",\n  \"whatsapp\": \"0874821948\",\n  \"telegram\": \"occaecat laboris\",\n  \"skype\": \"magna\",\n  \"birthday\": \"1905-10-02\",\n  \"prefLang\": 1,\n  \"clientAssociations\": [\n    {\n      \"clientAssociationType\": 7,\n      \"counterparty\": \"urn:uuid:8e6d6811-055e-3579-e446-4d60d68c72e7\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/contacts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"contacts"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "8f4562a8-a7dc-4fea-87c5-89453634ceba",
+									"name": "Input parameters mismatch",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"urn:uuid:701b5ebf-0cf9-8f0a-4a95-ed767f21ce47\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"ut veniam est quis fugiat\",\n  \"phones\": [\n    {\n      \"type\": 1,\n      \"number\": \"0451297501\"\n    }\n  ],\n  \"middleName\": \"id a\",\n  \"emails\": [\n    {\n      \"type\": 100,\n      \"email\": \"RwR.W4WQqD@JhE434D8XIc.LxmJVOeN.ZzehPk-lI.L6\"\n    }\n  ],\n  \"comment\": \"adipisicing ut Duis dolor\",\n  \"gender\": false,\n  \"viber\": \"0362667738\",\n  \"whatsapp\": \"0874821948\",\n  \"telegram\": \"occaecat laboris\",\n  \"skype\": \"magna\",\n  \"birthday\": \"1905-10-02\",\n  \"prefLang\": 1,\n  \"clientAssociations\": [\n    {\n      \"clientAssociationType\": 7,\n      \"counterparty\": \"urn:uuid:8e6d6811-055e-3579-e446-4d60d68c72e7\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/contacts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"contacts"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "98c49bb7-5881-4317-ae44-6b97fa2a9338",
+									"name": "Server error occured",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"urn:uuid:701b5ebf-0cf9-8f0a-4a95-ed767f21ce47\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"ut veniam est quis fugiat\",\n  \"phones\": [\n    {\n      \"type\": 1,\n      \"number\": \"0451297501\"\n    }\n  ],\n  \"middleName\": \"id a\",\n  \"emails\": [\n    {\n      \"type\": 100,\n      \"email\": \"RwR.W4WQqD@JhE434D8XIc.LxmJVOeN.ZzehPk-lI.L6\"\n    }\n  ],\n  \"comment\": \"adipisicing ut Duis dolor\",\n  \"gender\": false,\n  \"viber\": \"0362667738\",\n  \"whatsapp\": \"0874821948\",\n  \"telegram\": \"occaecat laboris\",\n  \"skype\": \"magna\",\n  \"birthday\": \"1905-10-02\",\n  \"prefLang\": 1,\n  \"clientAssociations\": [\n    {\n      \"clientAssociationType\": 7,\n      \"counterparty\": \"urn:uuid:8e6d6811-055e-3579-e446-4d60d68c72e7\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/contacts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"contacts"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								}
+							]
+						}
+					],
+					"id": "7bd214d0-bb1d-42e5-b697-6c0757ad10a4"
+				},
+				{
+					"name": "counterparties",
+					"item": [
+						{
+							"name": "Posts 'New counterparty created' event",
+							"id": "bb6de550-dfe9-4879-9de4-a263897d0e9a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"9a0a5120-9779-5815-9316-22707901a13c\",\n  \"name\": \"sint voluptate sunt magna adipisicing\",\n  \"channel\": 2,\n  \"inCharge\": \"adipisicing reprehenderit\",\n  \"fullName\": \"ea aute voluptate\",\n  \"comment\": \"non elit\",\n  \"financialBlock\": false,\n  \"disabled\": false,\n  \"b2b\": true,\n  \"supplier\": false,\n  \"corporation\": \"cea16a85-141e-1b4a-6c75-67f30197b93a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/counterparties",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"counterparties"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								},
+								"description": "Creates and posts to Kafka an even of type 'New counterparty created'"
+							},
+							"response": [
+								{
+									"id": "69187493-cc39-4561-a830-92d1b9bd87ed",
+									"name": "The counterparty creation event has been successfully posted to Kafka",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"9a0a5120-9779-5815-9316-22707901a13c\",\n  \"name\": \"sint voluptate sunt magna adipisicing\",\n  \"channel\": 2,\n  \"inCharge\": \"adipisicing reprehenderit\",\n  \"fullName\": \"ea aute voluptate\",\n  \"comment\": \"non elit\",\n  \"financialBlock\": false,\n  \"disabled\": false,\n  \"b2b\": true,\n  \"supplier\": false,\n  \"corporation\": \"cea16a85-141e-1b4a-6c75-67f30197b93a\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/counterparties",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"counterparties"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "ce0cab6c-1cd3-4f0d-9d62-062e570f16af",
+									"name": "Input parameters mismatch",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"9a0a5120-9779-5815-9316-22707901a13c\",\n  \"name\": \"sint voluptate sunt magna adipisicing\",\n  \"channel\": 2,\n  \"inCharge\": \"adipisicing reprehenderit\",\n  \"fullName\": \"ea aute voluptate\",\n  \"comment\": \"non elit\",\n  \"financialBlock\": false,\n  \"disabled\": false,\n  \"b2b\": true,\n  \"supplier\": false,\n  \"corporation\": \"cea16a85-141e-1b4a-6c75-67f30197b93a\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/counterparties",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"counterparties"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "31fb2754-6148-4f12-aa24-932a8a12546e",
+									"name": "Server error occured",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"9a0a5120-9779-5815-9316-22707901a13c\",\n  \"name\": \"sint voluptate sunt magna adipisicing\",\n  \"channel\": 2,\n  \"inCharge\": \"adipisicing reprehenderit\",\n  \"fullName\": \"ea aute voluptate\",\n  \"comment\": \"non elit\",\n  \"financialBlock\": false,\n  \"disabled\": false,\n  \"b2b\": true,\n  \"supplier\": false,\n  \"corporation\": \"cea16a85-141e-1b4a-6c75-67f30197b93a\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/counterparties",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"counterparties"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Posts 'Counterparty updated' event",
+							"id": "6f20e010-05a3-41da-a858-6f0d78db396b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"9a0a5120-9779-5815-9316-22707901a13c\",\n  \"name\": \"sint voluptate sunt magna adipisicing\",\n  \"channel\": 2,\n  \"inCharge\": \"adipisicing reprehenderit\",\n  \"fullName\": \"ea aute voluptate\",\n  \"comment\": \"non elit\",\n  \"financialBlock\": false,\n  \"disabled\": false,\n  \"b2b\": true,\n  \"supplier\": false,\n  \"corporation\": \"cea16a85-141e-1b4a-6c75-67f30197b93a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/counterparties",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"counterparties"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								},
+								"description": "Creates and posts to Kafka an even of type 'Counterparty updated'"
+							},
+							"response": [
+								{
+									"id": "d11cd055-ce7f-43d0-9c9e-7e71aebcbdfc",
+									"name": "The counterparty updation event has been successfully posted to Kafka",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"9a0a5120-9779-5815-9316-22707901a13c\",\n  \"name\": \"sint voluptate sunt magna adipisicing\",\n  \"channel\": 2,\n  \"inCharge\": \"adipisicing reprehenderit\",\n  \"fullName\": \"ea aute voluptate\",\n  \"comment\": \"non elit\",\n  \"financialBlock\": false,\n  \"disabled\": false,\n  \"b2b\": true,\n  \"supplier\": false,\n  \"corporation\": \"cea16a85-141e-1b4a-6c75-67f30197b93a\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/counterparties",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"counterparties"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "d694bd9b-0f61-43d6-8594-b7cc2df335ee",
+									"name": "Input parameters mismatch",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"9a0a5120-9779-5815-9316-22707901a13c\",\n  \"name\": \"sint voluptate sunt magna adipisicing\",\n  \"channel\": 2,\n  \"inCharge\": \"adipisicing reprehenderit\",\n  \"fullName\": \"ea aute voluptate\",\n  \"comment\": \"non elit\",\n  \"financialBlock\": false,\n  \"disabled\": false,\n  \"b2b\": true,\n  \"supplier\": false,\n  \"corporation\": \"cea16a85-141e-1b4a-6c75-67f30197b93a\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/counterparties",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"counterparties"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "f1b71755-8619-4c9b-b7f8-6a6664399a47",
+									"name": "Server error occured",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"9a0a5120-9779-5815-9316-22707901a13c\",\n  \"name\": \"sint voluptate sunt magna adipisicing\",\n  \"channel\": 2,\n  \"inCharge\": \"adipisicing reprehenderit\",\n  \"fullName\": \"ea aute voluptate\",\n  \"comment\": \"non elit\",\n  \"financialBlock\": false,\n  \"disabled\": false,\n  \"b2b\": true,\n  \"supplier\": false,\n  \"corporation\": \"cea16a85-141e-1b4a-6c75-67f30197b93a\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/counterparties",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"counterparties"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								}
+							]
+						}
+					],
+					"id": "80469af8-6e5c-4d9e-b1e0-6ce47cdcc723"
+				},
+				{
+					"name": "tradeoutlets",
+					"item": [
+						{
+							"name": "Posts 'New trade outlet created' event",
+							"id": "470d67ca-8294-4660-bde8-30e6308148ec",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"a3ab392b-beaf-892d-d6cc-08d9d061279b\",\n  \"name\": \"veniam qui occaecat\",\n  \"city\": \"ada98f3b-6806-e98f-dc6e-1f79075b8a25\",\n  \"address\": \"cillum exercitation id cupidatat\",\n  \"counterParty\": \"urn:uuid:fb9868ff-2834-29ef-fdba-648f49dff8a5\",\n  \"type\": 6,\n  \"outOfOrder\": false,\n  \"unloadPlace\": \"Lorem ullamco laborum pariatur nostrud\",\n  \"bringIntoTheOutlet\": false,\n  \"inCharge\": \"Duis elit dolor velit\",\n  \"comment\": \"enim adipisicing ad\",\n  \"commentForWH\": \"in qui sit dolor\",\n  \"commentForLogists\": \"ad incididunt irure tempor\",\n  \"commentForSales\": \"officia\",\n  \"fixedUAH\": false,\n  \"paymentDelay\": 0,\n  \"annoyanceDate\": \"1969-07-19\",\n  \"annoyanceComment\": \"officia commodo in\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/tradeoutlets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"tradeoutlets"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								},
+								"description": "Creates and posts to Kafka an even of type 'New trade outlet created'"
+							},
+							"response": [
+								{
+									"id": "f2ab1c93-34d5-4bea-ab18-382c5d779645",
+									"name": "The trade outlet creation event has been successfully posted to Kafka",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"a3ab392b-beaf-892d-d6cc-08d9d061279b\",\n  \"name\": \"veniam qui occaecat\",\n  \"city\": \"ada98f3b-6806-e98f-dc6e-1f79075b8a25\",\n  \"address\": \"cillum exercitation id cupidatat\",\n  \"counterParty\": \"urn:uuid:fb9868ff-2834-29ef-fdba-648f49dff8a5\",\n  \"type\": 6,\n  \"outOfOrder\": false,\n  \"unloadPlace\": \"Lorem ullamco laborum pariatur nostrud\",\n  \"bringIntoTheOutlet\": false,\n  \"inCharge\": \"Duis elit dolor velit\",\n  \"comment\": \"enim adipisicing ad\",\n  \"commentForWH\": \"in qui sit dolor\",\n  \"commentForLogists\": \"ad incididunt irure tempor\",\n  \"commentForSales\": \"officia\",\n  \"fixedUAH\": false,\n  \"paymentDelay\": 0,\n  \"annoyanceDate\": \"1969-07-19\",\n  \"annoyanceComment\": \"officia commodo in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/tradeoutlets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"tradeoutlets"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "ae788dc0-0199-480c-8016-f5d9d14748d2",
+									"name": "Input parameters mismatch",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"a3ab392b-beaf-892d-d6cc-08d9d061279b\",\n  \"name\": \"veniam qui occaecat\",\n  \"city\": \"ada98f3b-6806-e98f-dc6e-1f79075b8a25\",\n  \"address\": \"cillum exercitation id cupidatat\",\n  \"counterParty\": \"urn:uuid:fb9868ff-2834-29ef-fdba-648f49dff8a5\",\n  \"type\": 6,\n  \"outOfOrder\": false,\n  \"unloadPlace\": \"Lorem ullamco laborum pariatur nostrud\",\n  \"bringIntoTheOutlet\": false,\n  \"inCharge\": \"Duis elit dolor velit\",\n  \"comment\": \"enim adipisicing ad\",\n  \"commentForWH\": \"in qui sit dolor\",\n  \"commentForLogists\": \"ad incididunt irure tempor\",\n  \"commentForSales\": \"officia\",\n  \"fixedUAH\": false,\n  \"paymentDelay\": 0,\n  \"annoyanceDate\": \"1969-07-19\",\n  \"annoyanceComment\": \"officia commodo in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/tradeoutlets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"tradeoutlets"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "9c2d2711-0a08-4de4-938e-aff75a691b20",
+									"name": "Server error occured",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"a3ab392b-beaf-892d-d6cc-08d9d061279b\",\n  \"name\": \"veniam qui occaecat\",\n  \"city\": \"ada98f3b-6806-e98f-dc6e-1f79075b8a25\",\n  \"address\": \"cillum exercitation id cupidatat\",\n  \"counterParty\": \"urn:uuid:fb9868ff-2834-29ef-fdba-648f49dff8a5\",\n  \"type\": 6,\n  \"outOfOrder\": false,\n  \"unloadPlace\": \"Lorem ullamco laborum pariatur nostrud\",\n  \"bringIntoTheOutlet\": false,\n  \"inCharge\": \"Duis elit dolor velit\",\n  \"comment\": \"enim adipisicing ad\",\n  \"commentForWH\": \"in qui sit dolor\",\n  \"commentForLogists\": \"ad incididunt irure tempor\",\n  \"commentForSales\": \"officia\",\n  \"fixedUAH\": false,\n  \"paymentDelay\": 0,\n  \"annoyanceDate\": \"1969-07-19\",\n  \"annoyanceComment\": \"officia commodo in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/tradeoutlets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"tradeoutlets"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Posts 'Trade outlet updated' event",
+							"id": "37a34746-a2ee-40d5-881b-7d2f80f84457",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"a3ab392b-beaf-892d-d6cc-08d9d061279b\",\n  \"name\": \"veniam qui occaecat\",\n  \"city\": \"ada98f3b-6806-e98f-dc6e-1f79075b8a25\",\n  \"address\": \"cillum exercitation id cupidatat\",\n  \"counterParty\": \"urn:uuid:fb9868ff-2834-29ef-fdba-648f49dff8a5\",\n  \"type\": 6,\n  \"outOfOrder\": false,\n  \"unloadPlace\": \"Lorem ullamco laborum pariatur nostrud\",\n  \"bringIntoTheOutlet\": false,\n  \"inCharge\": \"Duis elit dolor velit\",\n  \"comment\": \"enim adipisicing ad\",\n  \"commentForWH\": \"in qui sit dolor\",\n  \"commentForLogists\": \"ad incididunt irure tempor\",\n  \"commentForSales\": \"officia\",\n  \"fixedUAH\": false,\n  \"paymentDelay\": 0,\n  \"annoyanceDate\": \"1969-07-19\",\n  \"annoyanceComment\": \"officia commodo in\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entities/tradeoutlets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										"tradeoutlets"
+									],
+									"variable": [
+										{
+											"key": "basePath",
+											"value": "{{basePath}}"
+										}
+									]
+								},
+								"description": "Creates and posts to Kafka an even of type 'Trade outlet updated'"
+							},
+							"response": [
+								{
+									"id": "8a8adaf3-1018-47a4-89c9-8e1cc5eab948",
+									"name": "The trade outlet updation event has been successfully posted to Kafka",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"a3ab392b-beaf-892d-d6cc-08d9d061279b\",\n  \"name\": \"veniam qui occaecat\",\n  \"city\": \"ada98f3b-6806-e98f-dc6e-1f79075b8a25\",\n  \"address\": \"cillum exercitation id cupidatat\",\n  \"counterParty\": \"urn:uuid:fb9868ff-2834-29ef-fdba-648f49dff8a5\",\n  \"type\": 6,\n  \"outOfOrder\": false,\n  \"unloadPlace\": \"Lorem ullamco laborum pariatur nostrud\",\n  \"bringIntoTheOutlet\": false,\n  \"inCharge\": \"Duis elit dolor velit\",\n  \"comment\": \"enim adipisicing ad\",\n  \"commentForWH\": \"in qui sit dolor\",\n  \"commentForLogists\": \"ad incididunt irure tempor\",\n  \"commentForSales\": \"officia\",\n  \"fixedUAH\": false,\n  \"paymentDelay\": 0,\n  \"annoyanceDate\": \"1969-07-19\",\n  \"annoyanceComment\": \"officia commodo in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/tradeoutlets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"tradeoutlets"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "26b64843-1012-4091-9a4c-0c142d15bf5a",
+									"name": "Input parameters mismatch",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"a3ab392b-beaf-892d-d6cc-08d9d061279b\",\n  \"name\": \"veniam qui occaecat\",\n  \"city\": \"ada98f3b-6806-e98f-dc6e-1f79075b8a25\",\n  \"address\": \"cillum exercitation id cupidatat\",\n  \"counterParty\": \"urn:uuid:fb9868ff-2834-29ef-fdba-648f49dff8a5\",\n  \"type\": 6,\n  \"outOfOrder\": false,\n  \"unloadPlace\": \"Lorem ullamco laborum pariatur nostrud\",\n  \"bringIntoTheOutlet\": false,\n  \"inCharge\": \"Duis elit dolor velit\",\n  \"comment\": \"enim adipisicing ad\",\n  \"commentForWH\": \"in qui sit dolor\",\n  \"commentForLogists\": \"ad incididunt irure tempor\",\n  \"commentForSales\": \"officia\",\n  \"fixedUAH\": false,\n  \"paymentDelay\": 0,\n  \"annoyanceDate\": \"1969-07-19\",\n  \"annoyanceComment\": \"officia commodo in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/tradeoutlets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"tradeoutlets"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								},
+								{
+									"id": "513e3063-e0ba-464b-8ee0-d957b3af9b67",
+									"name": "Server error occured",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"a3ab392b-beaf-892d-d6cc-08d9d061279b\",\n  \"name\": \"veniam qui occaecat\",\n  \"city\": \"ada98f3b-6806-e98f-dc6e-1f79075b8a25\",\n  \"address\": \"cillum exercitation id cupidatat\",\n  \"counterParty\": \"urn:uuid:fb9868ff-2834-29ef-fdba-648f49dff8a5\",\n  \"type\": 6,\n  \"outOfOrder\": false,\n  \"unloadPlace\": \"Lorem ullamco laborum pariatur nostrud\",\n  \"bringIntoTheOutlet\": false,\n  \"inCharge\": \"Duis elit dolor velit\",\n  \"comment\": \"enim adipisicing ad\",\n  \"commentForWH\": \"in qui sit dolor\",\n  \"commentForLogists\": \"ad incididunt irure tempor\",\n  \"commentForSales\": \"officia\",\n  \"fixedUAH\": false,\n  \"paymentDelay\": 0,\n  \"annoyanceDate\": \"1969-07-19\",\n  \"annoyanceComment\": \"officia commodo in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entities/tradeoutlets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entities",
+												"tradeoutlets"
+											],
+											"variable": [
+												{
+													"key": "basePath",
+													"value": "{{basePath}}"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timestamp\": \"2010-10-04T11:46:09.271Z\",\n  \"status\": -90522873,\n  \"path\": \"ad cillum voluptate ut\",\n  \"success\": false,\n  \"errorCode\": -75282793,\n  \"errorDescription\": \"in et proident\",\n  \"extendedInfo\": \"amet o\"\n}"
+								}
+							]
+						}
+					],
+					"id": "7da08030-00d3-4f6e-9c59-e749b4e0e817"
+				}
+			],
+			"id": "9e3902a3-bde4-4be4-abf8-4df570db7067"
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "<Basic Auth Username>",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "<Basic Auth Password>",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "99c03072-7efd-48e8-a2b5-eb1eda44b8e1",
+			"key": "basePath",
+			"value": "b24crm",
+			"type": "any",
+			"description": {
+				"content": "",
+				"type": "text/plain"
+			}
+		},
+		{
+			"id": "2506cd8f-e12f-4f46-b1bd-e616f56e0759",
+			"key": "baseUrl",
+			"value": "https://swt-it-api.sanwell.biz/{{basePath}}",
+			"type": "string"
+		}
+	]
+}

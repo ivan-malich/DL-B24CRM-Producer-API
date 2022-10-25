@@ -364,7 +364,8 @@
                     },
                     "counterparty": {
                         "type": "string",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "description": "Associated counterparty id"
                     }
                 }
             },
@@ -709,6 +710,7 @@
                     "id",
                     "name",
                     "city",
+                    "territory",
                     "address",
                     "counterParty"
                 ],
@@ -726,6 +728,10 @@
                         "type": "string",
                         "format": "uuid"
                     },
+                    "territory": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
                     "address": {
                         "type": "string",
                         "minLength": 5,
@@ -735,6 +741,11 @@
                         "type": "integer",
                         "minimum": 0,
                         "maximum": 9,
+                        "nullable": true
+                    },
+                    "b2b": {
+                        "type": "boolean",
+                        "default": true,
                         "nullable": true
                     },
                     "outOfOrder": {
@@ -774,6 +785,13 @@
                         "minLength": 3,
                         "maxLength": 1024,
                         "nullable": true
+                    },
+                    "routeListContacts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
                     },
                     "commentForSales": {
                         "type": "string",
